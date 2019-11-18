@@ -549,9 +549,10 @@ export default class FlashMessage extends Component {
     this.toggleVisibility(false, animated);
   }
   render() {
-    const { renderFlashMessageIcon, renderCustomContent, MessageComponent } = this.props;
+    const { renderCustomContent, MessageComponent } = this.props;
     const { message, visibleValue } = this.state;
-
+    
+    const renderFlashMessageIcon = this.prop(message, "renderFlashMessageIcon");
     const style = this.prop(message, "style");
     const textStyle = this.prop(message, "textStyle");
     const titleStyle = this.prop(message, "titleStyle");
